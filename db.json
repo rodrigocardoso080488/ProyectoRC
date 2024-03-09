@@ -1,0 +1,34 @@
+{
+  "productos": [
+    {
+      "id": "030b",
+      "title": "pepsi",
+      "description": "sddddd",
+      "category": "Bebida"
+    },
+    {
+      "id": "4a81",
+      "title": "pepsi",
+      "description": "sssssdadw",
+      "category": "Bebida"
+    },
+    {
+      "id": "c9f8",
+      "title": "pespsi",
+      "description": "asddsasd",
+      "category": "Bebida"
+    },
+    {
+      "id": "9a35",
+      "title": "pespsi",
+      "description": "asdasdads",
+      "category": "Bebida"
+    },
+    {
+      "id": "b707",
+      "title": "cocaaa",
+      "description": "sadasdassd",
+      "category": "Bebida"
+    }
+  ]
+}
