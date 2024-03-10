@@ -58,7 +58,7 @@ const CrearProducto = () => {
     //2do- El método, como estamos CREANDO O AGREGANDO un producto es "POST". Luego le configuramos los headers que son las cabeceras, con el tipo de contenido que vamos a enviar, como es un objeto JSON ("content-type":"application/json").
     // 3ro-Los valores que capturamos del formulario. Esos valores se envían mediante el body (cuerpo de la solicitud o petición http), como hay que enviar los valores(values) como JSON, hay que transformarlo con JSON.stringify.
     //Para limpiar el formulario: si el valor del estado del formulario guardado en el servidor (response.status) es estrictamente igual al código 201(es una respuesta exitosa a una creación, es decir al método POST), se reseteará el formulario creado con formik.
-
+    
     onSubmit: (values) => {
       Swal.fire({
         title: "Estas seguro de guardar este producto ?",
@@ -71,7 +71,7 @@ const CrearProducto = () => {
         if (result.isConfirmed) {
           try {
             // console.log("valor de Formik", values);
-            const response = await fetch(`${API}/productos`, {
+            const response = await fetch(`${API}/productos`, {  
               method: "POST",
               headers: {
                 "content-Type": "application/json",

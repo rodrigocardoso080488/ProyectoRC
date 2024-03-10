@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-// Para usar el boton de react-boostrap, debo importar susn funciones.
+// Para usar el botón de react-bootstrap, debo importar sus funciones.
 import Button from "react-bootstrap/Button";
 
-//Para poder enlazar el componente hijo (ListaTareas) con el componente padre (Tareas), debo ir al archivo Tarea.jsx y montar (pegar): <ListaTareas></ListaTareas>. Al ser ListaTareas un hijo del componente padre Tarea, las propiedades (props) se heredan, entonces al pasarle props, le paso las propiedades de Tarea para que la usea el componente hijo. Tambien funcionará si le paso directamente como argumento {tareas}.
+//Para poder enlazar el componente hijo (ListaTareas) con el componente padre (Tareas), debo ir al archivo Tarea.jsx y montar (pegar): <ListaTareas></ListaTareas>. Al ser ListaTareas un hijo del componente padre Tarea, las propiedades (Props) se heredan, entonces al pasarle props, le paso las propiedades de Tarea para que la use el componente hijo. También funcionará si le paso directamente como argumento {tareas}.
 
 const ListaTareas = ({tareas, setTareas}) => {
-  // console.log("la propiedades que recibe el componente (ListaTarea) es: =>", props);
+  // console.log("la propiedades que recibe el componente (ListaTarea) es: =>", Props);
 
-  //Adentro del componente ListaTarea, se crea una funcion eliminarTarea. Al hacer clic en el boton de eliminar tarea, se va a mapear el array con las listas de tareas y me devolverá el index de donde se encuentra cada tarea. Ese index se lo utilizará como argumento de la funcion creada. 
-  //con el metodo array.splice se elimina el elemento(tarea) que este ubicado en la posicion de index que nosotros indiquemos.
+  //Adentro del componente ListaTarea, se crea una funcion eliminarTarea. Al hacer clic en el botón de eliminar tarea, se va a mapear el array con las listas de tareas y me devolverá el index de donde se encuentra cada tarea. Ese index se lo utilizará como argumento de la funcion creada. 
+  //con el método array.splice se elimina el elemento(tarea) que este ubicado en la posición de index que nosotros indiquemos.
   
   const eliminarTarea = (index)=> {
     let copiaTodasTareas=[...tareas]; //crea una copia del array de tareas.
@@ -17,7 +17,7 @@ const ListaTareas = ({tareas, setTareas}) => {
     console.log("la tarea eliminada del array de tarea es:", tareaEliminada);
     setTareas(copiaTodasTareas); //Actualiza el estado con las nuevas tareas que quedan.
     console.log("Las tareas pendientes son:", copiaTodasTareas)
-    localStorage.setItem("task",JSON.stringify(copiaTodasTareas)); //Con el metodo splice ya se elimino la tarea con el indice especifica y el array se actualizo con la lista de tareas pendiente. Debo crear ese nuevo.array.
+    localStorage.setItem("task",JSON.stringify(copiaTodasTareas)); //Con el método splice ya se elimino la tarea con el indice especifica y el array se actualizo con la lista de tareas pendiente. Debo crear ese nuevo.array.
   };
 
   return (

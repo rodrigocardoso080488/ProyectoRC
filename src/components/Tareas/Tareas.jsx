@@ -5,8 +5,8 @@ import ListaTareas from "./ListaTareas";
 //import OtraListaTareas from "./OtraListaTareas";
 
 //Con currentTarget.value accedo al valor del evento(en este caso cada vez que escribo una letra). 
-// Una vez capturado el valor que nosotros ingresemos, el valor se lo guardara en la variable de estado "tarea". La funcion seteadora(setTarea) irá actualizando los valores cada vez que se ingrese un digito o valor nuevo.
-//Una vez que le doy click a guardar tarea,x ej. estudiar se guardará en la variable tarea . Luego estudiar se subirá a un arreglo([...tareas, tarea]) que inicialmente de lo declario vacio(useState([])). Nota: Subir la tarea a un arreglo de tareas, se logra con el operador Spread (...).
+// Una vez capturado el valor que nosotros ingresemos, el valor se lo guardara en la variable de estado "tarea". La funcion seteadora(setTarea) irá actualizando los valores cada vez que se ingrese un dígito o valor nuevo.
+//Una vez que le doy click a guardar tarea,x ej. estudiar se guardará en la variable tarea . Luego estudiar se subirá a un arreglo([...tareas, tarea]) que inicialmente de lo declaró vació(useState([])). Nota: Subir la tarea a un arreglo de tareas, se logra con el operador Spread (...).
 //Antes de cerrar el ultimo div, debo enlazar el componente hijo (ListaTarea) con el componente padre (Tareas), debo aclarar la variable de estado que quiero que se herede. En este caso se heredará todas las propiedades del array de tareas.
 
 const Tareas = () => {
