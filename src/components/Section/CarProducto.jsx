@@ -10,8 +10,8 @@ const CarProducto = ({ producto }) => {
           <Card.Body>
             <Card.Title>{producto.title}</Card.Title>
             <Card.Text>
-              <span className="mb-2 ">{producto.description}</span>
-              <span className="fs-4">{producto.category}</span>
+              <span className="mb-2 d-block">{producto.description}</span>
+              <span className="fs-4 d-block">{producto.category}</span>
             </Card.Text>
             <Button variant="primary">Ver más</Button>
           </Card.Body>

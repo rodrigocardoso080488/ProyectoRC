@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Container, Row} from "react-bootstrap";
 import axios from "axios";
 import CarProducto from "../Section/CarProducto";
-//instalamos e importamos axios. Axios funciona como la peticion fetch.
+//instalamos e importamos axios. Petición axios funciona como peticion fetch. Ambas trabajan de manera asíncrona.
 
 const Home = () => {
   const [productos, setProductos] = useState([]);
@@ -24,7 +24,7 @@ const Home = () => {
   };
   
   useEffect(() => {
-    getProductos(); //Una vez que lo llamo, debo guardar mi array de productos.
+    getProductos(); 
 
     return () => {
       setProductos([]);

@@ -17,14 +17,14 @@ const ListadoProductos = () => {
       // console.log("respuesta de la peticion en formato de objeto javaScript:",response);
       const responseJson = await response.json();
       // console.log("respuesta de la peticion en formato de objeto JSON:",responseJson);
-      setProductos(responseJson);
+      setProductos(responseJson);//Una vez que obtengo la respuesta de la API, llamo a la funcion setProductos para procesar y mostrar los datos de los productos en la interfaz de usuario.
     } catch (error) {
       console.error("El error es =>", error);
     }
   };
   //Para llamar la funcion getProductos, tengo que hacerlo a través de los hooks (useEffect), el cual es una función a la cual se le pasa como argumento una arrow function y un array de dependencia. ese [] significa que la funcion flecha solamente se va a ejecutar en el montaje.
   useEffect(() => {
-    getProductos(); //Una vez que lo llamo, debo guardar mi array de productos.
+    getProductos();
 
     return()=>{
       setProductos([]);
