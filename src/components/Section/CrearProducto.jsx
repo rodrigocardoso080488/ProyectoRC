@@ -1,12 +1,10 @@
-/* eslint-disable no-undef */
-// import { useState } from "react";
+
 import { Button, Form } from "react-bootstrap";
-// import { validarCategoria } from "../helpers/validaciones";
 
 //Estas 3 librerias seran necesarias para realizar validaciones de formularios.
-import clsx from "clsx";
-import * as Yup from "yup";
-import { useFormik } from "formik";
+import clsx from "clsx";//Librería para agregar clases CSS basadas en ciertas condiciones.
+import * as Yup from "yup"; //Librería de validación de esquemas que se utiliza para definir esquemas de validación para los datos del formulario.
+import { useFormik } from "formik"; //Librería para la gestión de formularios.
 
 import Swal from "sweetalert2";
 
@@ -21,7 +19,7 @@ const CrearProducto = () => {
   //   const [category, setCategory] = useState("");
   const navigate = useNavigate();
 
-  //Las variables de entorno se utilizan para almacenar información sensible, en este caso estamos importando una variable de entorno utilizando VITE como bundler(empaquetador). Al utilizar import.meta.env.VITE_API, se está accediendo al valor de la variable de entorno VITE_API en tiempo de compilación y asignándolo a la constante API. Es decir que se está obteniendo la URL de la API desde una variable de entorno definida en tu proyecto Vite.js.
+  //Las variables de entorno se utilizan para almacenar información sensible, en este caso estamos importando una variable de entorno utilizando VITE como bundler(empaquetador). Al utilizar import.meta.env.VITE_API, se está accediendo al valor de la variable de entorno VITE_API (GUARDADA EN EL ARCHIVO .env) en tiempo de compilación y asignándolo a la constante API. Es decir que se está obteniendo la URL de la API desde una variable de entorno definida en tu proyecto Vite.js.
   const API = import.meta.env.VITE_API;
   console.log("API-->:", API);
 
@@ -53,7 +51,8 @@ const CrearProducto = () => {
 
     //Cuando creamos el evento para mandar el formulario creado, lo enviamos a nuestro servidor (realizamos una peticion al servidor).
     //1ro-Agregamos la palabra async adelante de (values).
-    //2do-Guardamos los valores del formulario en el servidor. Por convención se lo declara como response. Le digo que espere a buscar (await fetch) la info requerida o url de nuestra API(Variable de entorno) y nos devuelve una promesa.Como argumento le pasamos:
+    //2do-Guardamos los valores del formulario en el servidor. Por convención se lo declara como response. Le digo que espere a buscar (await fetch) la info requerida o url de nuestra API(Variable de entorno) y nos devuelve una promesa.
+    //Como argumento le pasamos:
     // 1ro- Lo que vamos a guardar en el servidor, en este caso es un array con el nombre "producto" creado en db.json.
     //2do- El método, como estamos CREANDO O AGREGANDO un producto es "POST". Luego le configuramos los headers que son las cabeceras, con el tipo de contenido que vamos a enviar, como es un objeto JSON ("content-type":"application/json").
     // 3ro-Los valores que capturamos del formulario. Esos valores se envían mediante el body (cuerpo de la solicitud o petición http), como hay que enviar los valores(values) como JSON, hay que transformarlo con JSON.stringify.
@@ -89,9 +88,10 @@ const CrearProducto = () => {
                 text: "Se creó el producto exitosamente",
                 icon: "success",
               });
+              navigate("/Admin")
             }
           } catch (error) {
-            console.error("EL ERROR QUE TENES ES: ", error);
+            console.error("TENES UN ERROR DE TIPO: ", error);
           }
         }
       });
@@ -99,7 +99,7 @@ const CrearProducto = () => {
   });
 
   //Una vez hecha la peticion a json-server(que simula la base de dato) para que me guarde el producto. si voy a json-server en el archivo db.json voy a ver mi producto guardado. 
-  //nota: no olvidar de poner a correr json-server antes de hacer la petición.
+  //nota: No olvidar de poner a correr json-server antes de hacer la petición.
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();

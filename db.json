@@ -1,20 +1,20 @@
 {
   "productos": [
     {
-      "id": "030b",
       "title": "pepsi",
-      "description": "sddddd",
-      "category": "Bebida"
+      "description": "no retornable 3l",
+      "category": "Bebida",
+      "id": "030b"
     },
     {
       "title": "pepsi 2l",
-      "description": "envase retornable",
+      "description": "envase retornable 2L",
       "category": "Bebida",
       "id": "4a81"
     },
     {
-      "title": "fanta 1,5l",
-      "description": "envase no retornable",
+      "title": "PASO DE LOS TOROS 2L",
+      "description": "ENVASE NO RETORNABLE",
       "category": "Bebida",
       "id": "c9f8"
     },
@@ -25,16 +25,22 @@
       "id": "9a35"
     },
     {
-      "id": "b707",
       "title": "cocaaa",
-      "description": "sadasdassd",
-      "category": "Bebida"
+      "description": "retornable",
+      "category": "Bebida",
+      "id": "b707"
     },
     {
       "id": "61da",
       "title": "pepsi",
       "description": "limon ",
       "category": "Bebida"
+    },
+    {
+      "id": "dcf2",
+      "title": "Arroz integral",
+      "description": "500g",
+      "category": "Alimentos"
     }
   ]
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+//Nota: Cuando se hace click en el botón editar en el componente producto, me redirecciona a la pagina de editar. Aquí hacemos una peticion a la api para que me traiga el producto y me lo muestre en el formulario. Cuando utilicemos el modal será diferente. El producto ingresara por parámetro como una Props.
 import { Button, Form } from "react-bootstrap";
-// import { validarCategoria } from "../helpers/validaciones";
 
 //Estas 3 librerias seran necesarias para realizar validaciones de formularios.
 import clsx from "clsx";
