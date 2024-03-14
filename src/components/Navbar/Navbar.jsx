@@ -20,7 +20,7 @@ const BarraNavegacion = () => {
   return (
     <Navbar expand="lg" className="bg-dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Academia RC</Navbar.Brand>
+        <Navbar.Brand href="#home">CRUD</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

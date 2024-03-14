@@ -1,34 +1,46 @@
 {
   "productos": [
     {
-      "id": "030b",
       "title": "pepsi",
-      "description": "sddddd",
-      "category": "Bebida"
+      "description": "no retornable 3l",
+      "category": "Bebida",
+      "id": "030b"
     },
     {
-      "id": "4a81",
-      "title": "pepsi",
-      "description": "sssssdadw",
-      "category": "Bebida"
+      "title": "pepsi 2l",
+      "description": "envase retornable 2L",
+      "category": "Bebida",
+      "id": "4a81"
     },
     {
-      "id": "c9f8",
-      "title": "pespsi",
-      "description": "asddsasd",
-      "category": "Bebida"
+      "title": "PASO DE LOS TOROS 2L",
+      "description": "ENVASE NO RETORNABLE",
+      "category": "Bebida",
+      "id": "c9f8"
     },
     {
-      "id": "9a35",
-      "title": "pespsi",
-      "description": "asdasdads",
-      "category": "Bebida"
+      "title": "Mirinda Manzana 2l",
+      "description": "Envase descartable",
+      "category": "Bebida",
+      "id": "9a35"
     },
     {
-      "id": "b707",
       "title": "cocaaa",
-      "description": "sadasdassd",
+      "description": "retornable",
+      "category": "Bebida",
+      "id": "b707"
+    },
+    {
+      "id": "61da",
+      "title": "pepsi",
+      "description": "limon ",
       "category": "Bebida"
+    },
+    {
+      "id": "dcf2",
+      "title": "Arroz integral",
+      "description": "500g",
+      "category": "Alimentos"
     }
   ]
 }
