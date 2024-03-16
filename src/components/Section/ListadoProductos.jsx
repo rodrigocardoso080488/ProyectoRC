@@ -33,6 +33,7 @@ const ListadoProductos = () => {
 
   const API = import.meta.env.VITE_API;
 
+  //si nosotros queremos que esta función la utilice los componentes hijos (ej: <Producto></Producto> utilizada cuando se hace el mapeo en el return). Al componente declarado debo pasarle la función como props y declararla también el componente con la props que ingresa como parámetro.
   const getProductos = async () => {
     try {
       const response = await fetch(`${API}/productos`); //si no especifico el método de la petición, js entiende que el método es un GET.
@@ -41,7 +42,7 @@ const ListadoProductos = () => {
       // console.log("respuesta de la peticion en formato de objeto JSON:",responseJson);
       setProductos(responseJson); //Una vez que obtengo la respuesta de la API, llamo a la funcion setProductos para procesar y mostrar los datos de los productos en la interfaz de usuario.
     } catch (error) {
-      console.error("El error es =>", error);
+      console.log("El error es =>", error);
     }
   };
   //Para llamar la funcion getProductos, tengo que hacerlo a través de los hooks (useEffect), el cual es una función a la cual se le pasa como argumento una arrow function y un array de dependencia. ese [] significa que la funcion flecha solamente se va a ejecutar en el montaje.
@@ -68,7 +69,6 @@ const ListadoProductos = () => {
         producto={prodEdit}
         getProductos={getProductos}
       ></ModalEditar>
-
       <div className="container-fluid">
         <div className="text-center">
           <h2>Listado Productos</h2>
@@ -89,8 +89,9 @@ const ListadoProductos = () => {
                 return (
                   <Producto
                     producto={element}
-                    key={element.id}
                     handleShow={handleShow}
+                    key={element.id}
+                    getProductos={getProductos}
                   ></Producto>
                 );
               })}

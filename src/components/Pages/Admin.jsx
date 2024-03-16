@@ -1,6 +1,5 @@
 import ListadoProductos from "../Section/ListadoProductos";
 import { Button } from "react-bootstrap";
-
 import { useNavigate } from "react-router-dom";
 //UseNavigate funciona de la misma forma que funciona window.location.replace. Siempre que queramos redirigir vamos a utilizar los métodos que nos proporciona react-router-dom. Por convención se crea una constante llamada navigate y se lo iguala al método useNavigate().
 
@@ -20,7 +19,7 @@ const Administracion = () => {
           Crear Producto
         </Button>
       </div>
-      <ListadoProductos />
+      <ListadoProductos></ListadoProductos>
     </div>
   );
 };

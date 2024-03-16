@@ -1,46 +1,16 @@
 {
   "productos": [
     {
+      "id": "030b",
       "title": "pepsi",
-      "description": "no retornable 3l",
-      "category": "Bebida",
-      "id": "030b"
-    },
-    {
-      "title": "pepsi 2l",
-      "description": "envase retornable 2L",
-      "category": "Bebida",
-      "id": "4a81"
-    },
-    {
-      "title": "PASO DE LOS TOROS 2L",
-      "description": "ENVASE NO RETORNABLE",
-      "category": "Bebida",
-      "id": "c9f8"
-    },
-    {
-      "title": "Mirinda Manzana 2l",
-      "description": "Envase descartable",
-      "category": "Bebida",
-      "id": "9a35"
-    },
-    {
-      "title": "cocaaa",
-      "description": "retornable",
-      "category": "Bebida",
-      "id": "b707"
-    },
-    {
-      "id": "61da",
-      "title": "pepsi",
-      "description": "limon ",
+      "description": "sddddd",
       "category": "Bebida"
     },
     {
-      "id": "dcf2",
-      "title": "Arroz integral",
-      "description": "500g",
-      "category": "Alimentos"
+      "id": "e325",
+      "title": "ASDASD",
+      "description": "ASDASD",
+      "category": "Bebida"
     }
   ]
 }
