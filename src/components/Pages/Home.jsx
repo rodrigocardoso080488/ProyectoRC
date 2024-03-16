@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { Container, Row} from "react-bootstrap";
 import axios from "axios";
-import CarProducto from "../Section/CarProducto";
+import CardProducto from "../Section/CardProducto";
 //instalamos e importamos axios. Petición axios funciona como peticion fetch. Ambas trabajan de manera asíncrona.
 
 const Home = () => {
@@ -42,7 +42,7 @@ const Home = () => {
           <Row>
             {productos.map((element, index)=>{
                 return (
-                    <CarProducto producto={element} key={index}></CarProducto>
+                    <CardProducto producto={element} key={index}></CardProducto>
                 )
             })}
           </Row>

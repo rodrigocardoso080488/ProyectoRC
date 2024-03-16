@@ -21,10 +21,9 @@ const ModalEditar = ({ show, handleClose, producto, getProductos }) => {
   const API = import.meta.env.VITE_API;
   // console.log("API-->:", API);
 
-  // Si hay algo en el campo (si producto es distinto a undefined)
-  ////En el parámetro de las dependencias, se declara: [producto], esto quiere decir que este efecto va a funcionar cuando se actualice los inputs del producto.
+  //Se define un efecto secundario utilizando el hook useEffect. Este efecto se ejecutará cada vez que la variable producto cambie, es decir cuando se actualice los inputs del producto.
   //Nota:  se utiliza (producto!==undefined) en la condicional para asegurarse de que producto tenga un valor válido antes de intentar usarlo para actualizar el campo "title" en el formulario.
-  //Como quiero actualizar los valores del formulario(formik), debo utilizar el método de formik setFieldValue y pasarle los siguientes parámetros:
+  //Como quiero actualizar los valores del formulario(formik), debo utilizar el método de formik setFieldValue (establecer el valor de campo) y pasarle los siguientes parámetros:
   //1ro- El fiel(tiene que ser string). Son las propiedades declaradas en el objeto initialValue.
   //2do- El value. El valor del producto.
   //3ro- ShouldValidate?. Puede ser un boolean o undefined.
@@ -69,14 +68,14 @@ const ModalEditar = ({ show, handleClose, producto, getProductos }) => {
     validationOnChange: true,
 
     //Cuando creamos el evento para editar el formulario creado, lo enviamos a nuestro servidor (realizamos una peticion al servidor).
-    //1ro-Agregamos la palabra async adelante de (values).
-    //2do-Guardamos los valores del formulario en el servidor. Por convención se lo declara como response. Le digo que espere a buscar (await fetch) la info requerida o url de nuestra API(Variable de entorno) y nos devuelve una promesa. Como argumento le pasamos:
-    // 1ro- Lo que vamos a editar en el servidor, en este caso es el producto con el id especificado que se encuentra en el array con el nombre "producto" creado en db.json.
-    //2do- Como no sabemos si vamos EDITAR O ACTUALIZAR 1 o más campos un producto es "POST". Luego le configuramos los headers que son las cabeceras, con el tipo de contenido que vamos a enviar, como es un objeto JSON ("content-type":"application/json").
-    // 3ro-Los valores que capturamos del formulario. Esos valores se envían mediante el body (cuerpo de la solicitud o petición http), como hay que enviar los valores(values) como JSON, hay que transformarlo con JSON.stringify.
+    //1ro-Al agregar la palabra async adelante deL parámetro de la funcion flecha(result), me devolverá una promesa (valores que pueden estar disponible inmediatamente, en el futuro o nunca).
+    //2do-Creamos el bloque try-catch para menejar los errores de manera controlada (respuesta no exitosa de la petición).
+    //3ro- Dentro del try, hacemos la petición HTTP a la API con el objetivo que me devuelva los inputs del formulario almacenado en el el servidor. Por convención se lo declara como response. En la petición usamos la palabras clave (await axios, seguida del método de la petición) que significa buscar(axios) en en la base de dato (json-server) para actualizar la info requerida y esperar(await) la respuesta de la promesa. axios toma le pasamos los siguientes argumentos:
+    // 1- Entre acentos graves, la ruta o endpoint donde haremos la petición . Como vamos a editar en el servidor 1 solo producto, hay que pasarle entre template string . quedaría : `${API}/productos/${producto.id}`
+    //2do- Los valores del formularios (values).
+    //La respuesta de la petición la capturamos en la variable response.
     //Si el valor del estado de la respuesta de la petición (response.status) es estrictamente igual al código 200 (es una respuesta OK, es decir al método de la solicitud PUT), me va a redirigir a la pagina de administración(para eso uso el método navigate y especifico la ruta).
 
-    //Cuando se hace una petición fetch, hay que convertir el objeto a json manualmente con json.stringify pero cuando hacemos una peticion con axios, solo detecta el objeto y automáticamente lo convierte a json. solo hay que pasarle los valores.
     onSubmit: (values) => {
       Swal.fire({
         title: "Estas seguro en editar este producto?",
@@ -85,7 +84,8 @@ const ModalEditar = ({ show, handleClose, producto, getProductos }) => {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "SI",
-      }).then(async (result) => {
+      }).then( 
+        async (result) => {
         if (result.isConfirmed) {
           try {
             // console.log("valor de Formik", values);
@@ -106,7 +106,7 @@ const ModalEditar = ({ show, handleClose, producto, getProductos }) => {
       });
     },
   });
-
+  
   const closeModal = ()=>{
     getProductos();
     formik.resetForm();
