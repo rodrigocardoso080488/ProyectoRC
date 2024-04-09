@@ -6,9 +6,13 @@ import { useEffect, useState } from "react";
 import { Container, Row} from "react-bootstrap";
 //instalamos e importamos axios. Petición axios funciona como peticion fetch. Ambas trabajan de manera asíncrona.
 import axios from "axios";
-import CardProducto from "../Section/CardProducto";
+import CardProducto from "../Section/CardProducto"
+// import userContext from "../../Context/UserContext";
 
 const Home = () => {
+  //Se extrae el valor del usuario actual(email, rol y token) y se lo consume en un console.log para mostrarlo en la consola.
+  // const {currentUser}=useContext(userContext);
+  
   const [productos, setProductos] = useState([]);
 
   const API = import.meta.env.VITE_API;
@@ -31,7 +35,7 @@ const Home = () => {
       setProductos([]);
     };
   },[]);
-
+  // console.log("el valor de currentUser es -->", currentUser)
   //En el return del componente, se renderiza una estructura HTML que muestra un título "Catálogos de Productos" y un listado de productos utilizando el método map sobre el array productos. Para cada producto, se renderiza un componente CardProducto con las propiedades producto y key:
   return (
     <div>
