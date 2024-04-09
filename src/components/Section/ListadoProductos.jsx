@@ -10,7 +10,7 @@ import ModalEditar from "./ModalEditar";
 //El ciclo de vida de los componentes son 3: El montaje, la actualizacion y el desmontaje. Se desmonta un componente para liberar recursos o limpiar datos cuando el componente ya no es necesario. Para eso dentro del useEffect tengo que retornar la variable de actualización a su valor inicial.
 
 const ListadoProductos = () => {
-  //useState([]): Aquí se están declarando tres estados utilizando el hook de useState de React. Cada estado consta de dos elementos: el primero es una variable que almacena el valor del estado y el segundo es una función que se utiliza para actualizar dicho estado.
+  //useState([]): Aquí se están declarando tres estados utilizando el hook de useState de React. Cada estado consta de dos elementos: el primero es una variable que almacena el valor del estado y el segundo es una función que se utiliza para actualizar dicho estado. las 3 variables son:
   // productos: Almacena un array de productos y se inicializa como un array vacío.
   // show: Es un estado que se utiliza para determinar si el modal debe mostrarse o no. Cuando show es true, el modal se muestra en la interfaz; cuando es false, el modal se oculta. Es un booleano que se inicializa como false.
   // prodEdit: Es una variable que inicialmente se establece como undefined.
@@ -46,6 +46,8 @@ const ListadoProductos = () => {
     }
   };
   //Para llamar la funcion getProductos, tengo que hacerlo a través de los hooks (useEffect), el cual es una función a la cual se le pasa como argumento una arrow function y un array de dependencia. ese [] significa que la funcion flecha solamente se va a ejecutar en el montaje.
+  //Además, se está devolviendo una función de limpieza en el useEffect que se ejecutará cuando el componente se desmonte. En este caso, la función de limpieza está estableciendo el estado de productos a un array vacío mediante setProductos([]). Esto puede ser útil para limpiar recursos o realizar acciones necesarias antes de que el componente sea eliminado por completo.
+  //Un componente se desmonta en React cuando deja de renderizarse en el DOM. Esto puede ocurrir cuando el componente es eliminado de la interfaz de usuario, por ejemplo, al cambiar de página, al ocultar un modal o al navegar a otra sección de la aplicación.
   useEffect(() => {
     getProductos();
     return () => {

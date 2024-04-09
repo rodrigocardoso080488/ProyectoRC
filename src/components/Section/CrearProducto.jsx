@@ -23,7 +23,7 @@ const CrearProducto = () => {
   const API = import.meta.env.VITE_API;
   console.log("API-->:", API);
 
-  //1ro-Definimos las reglas de validación.
+  //1ro-Definimos las reglas de validación. shape=forma
   const ProductoSchema = Yup.object().shape({
     title: Yup.string()
       .min(4, "ingrese min 4 caractér")
@@ -33,7 +33,8 @@ const CrearProducto = () => {
       .min(4, "Ingrese como min 4 caractér")
       .max(200, "Ingrese como máximo 200 caractér")
       .required("La descripción del producto es requerida"),
-    category: Yup.string().required("La categoría es requerida"),
+    category: Yup.string()
+      .required("La categoría es requerida"),
   });
   //2do-Inicializamos los inputs. Se crea un objeto que tenga los valores iniciales del formulario.
   const initialValues = {

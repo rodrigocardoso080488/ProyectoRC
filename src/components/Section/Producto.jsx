@@ -13,9 +13,10 @@ import Swal from "sweetalert2";
 
 //La función handleShow en el código que proporcionaste se utiliza para mostrar un modal de edición cuando se hace clic en el botón con el texto "M-EDITAR". En particular, handleShow recibe como argumento el producto que se está mostrando en la fila de la tabla, y se encarga de manejar la lógica para mostrar el modal de edición correspondiente a ese producto en particular.
 
-//La funciónes declaradas en el componente <producto></producto>, se la utilizan en este componente, para eso debo pasarla como parámetros.
+//La funciónes declaradas en el componente <ListadoProducto></ListadoProducto>, se la utilizan en este componente. Para eso debo indicar en en el componente ListadoProductos cuales son las funciones que va a recibir el componente hijo (<Producto></Producto>). <Producto></Producto> recibe las propiedades del padre en forma de objeto. Por eso las props van entre {}.
 
 //hay 2 formas de eliminar 1 producto. realizando la función que lo elimina en un componente nuevo y luego montarlo abajo del botón eliminar o declarar la funcion con su lógica en este componente y luego llamarla con el evento onClick dentro del botón eliminar.
+
 const Producto = ({ producto, handleShow, getProductos }) => {
   const navigate = useNavigate();
   const API=import.meta.env.VITE_API;
